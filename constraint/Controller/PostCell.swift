@@ -13,8 +13,10 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var customView: UIView!{
         didSet{
             customView.layer.cornerRadius = 15
-            customView.layer.borderColor = UIColor.systemGray6.cgColor
+            customView.layer.borderColor = UIColor.systemGray4.cgColor
             customView.layer.borderWidth = 1
+            customView.layer.shadowColor = UIColor.lightGray.cgColor
+            customView.layer.shadowOffset = .zero
         }
     }
     @IBOutlet weak var userImage: UIImageView!{
@@ -27,7 +29,6 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var followBtn: UIButton!{
         didSet{
-            followBtn.backgroundColor = .white
             followBtn.layer.cornerRadius = followBtn.frame.size.height / 7
             followBtn.layer.borderWidth = 1
             followBtn.layer.borderColor = UIColor.systemBlue.cgColor

@@ -8,29 +8,47 @@
 import UIKit
 
 class HomeController: UIViewController {
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var ortherPostLabel: UIView!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var tableView: UITableView!{
-        didSet{
-            var frame = self.tableView.frame
-            frame.size.height = self.tableView.contentSize.height
-            self.tableView.frame = frame
-        }
-    }
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewSetup()
         self.collectionViewSetUp()
         self.setUpTableView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        var frame = self.tableView.frame;
-        frame.size.height = self.tableView.contentSize.height;
-        self.tableView.frame = frame;
+    deinit {
+        self.tableView.removeObserver(self, forKeyPath: "contentSize")
     }
 }
+
+// MARK: View Setup
+extension HomeController {
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "My posts"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    private func viewSetup(){
+        self.title = "My posts"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+}
+
 
 // MARK: CollectionView Delegate, Datasource
 extension HomeController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -60,8 +78,14 @@ extension HomeController : UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.size.width * 0.4, height: view.frame.size.height * 0.25)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "viewStory", sender: self)
+        self.collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
 
+// MARK: UITableView Delegate. Datasource
 extension HomeController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 12
@@ -79,9 +103,26 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: PostCell.identidier, bundle: nil), forCellReuseIdentifier: PostCell.identidier)
+        self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.tableView.deselectRow(at: indexPath, animated: true)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        
+        if let obj = object as? UITableView,
+           obj == self.tableView &&
+            keyPath == "contentSize" {
+            self.tableViewHeight.constant = tableView.contentSize.height
+        }
+    }
+}
+
+// MARK: Segue
+extension HomeController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewStory" {
+            let _ = segue.destination as! StoryController
+        }
     }
 }
