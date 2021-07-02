@@ -113,6 +113,7 @@ extension HomeController : UITableViewDelegate, UITableViewDataSource {
         if let obj = object as? UITableView,
            obj == self.tableView &&
             keyPath == "contentSize" {
+            print("resize")
             self.tableViewHeight.constant = tableView.contentSize.height
         }
     }

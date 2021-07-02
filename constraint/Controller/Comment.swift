@@ -9,10 +9,9 @@ import UIKit
 
 class Comment: UITableViewCell {
     public static let identifier = "Comment"
-    
     @IBOutlet weak var userImage: UIImageView! {
         didSet{
-            userImage.layer.contents = userImage.frame.size.height / 2
+            userImage.layer.cornerRadius = userImage.frame.size.height / 2
         }
     }
     
@@ -31,4 +30,14 @@ class Comment: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    
+    @IBAction func replyPressed(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.commentText.text?.append( "Label qwe qwe qjkweh kqwh keqwk jhkqwjhk eqjhwk ejqw kje Label qwe qwe qjkweh kqwh keqwk jhkqwj qjkweh kqwh keqwk jhkqwjhk eqjhwk ejqw kje ")
+            
+            let fixedWidth = self.commentText.frame.size.width
+            let newSize = self.commentText.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            self.commentText.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+        }
+    }
 }
