@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C068D83268F762100124B77 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C068D82268F762100124B77 /* ChatController.swift */; };
+		3C28F5A4268FF400003ED78C /* StoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28F5A3268FF400003ED78C /* StoriesController.swift */; };
+		3C28F5A8268FF40C003ED78C /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28F5A7268FF40C003ED78C /* FriendController.swift */; };
+		3C28F5AD268FF4DB003ED78C /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28F5AB268FF4DB003ED78C /* ChatCell.swift */; };
+		3C28F5AE268FF4DB003ED78C /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C28F5AC268FF4DB003ED78C /* ChatCell.xib */; };
 		630BDC13268EBF75007861C5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDC11268EBF75007861C5 /* CustomCell.swift */; };
 		630BDC14268EBF75007861C5 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC12268EBF75007861C5 /* CustomCell.xib */; };
 		630BDC17268EC570007861C5 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDC15268EC570007861C5 /* PostCell.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C068D82268F762100124B77 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		3C28F5A3268FF400003ED78C /* StoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesController.swift; sourceTree = "<group>"; };
+		3C28F5A7268FF40C003ED78C /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
+		3C28F5AB268FF4DB003ED78C /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		3C28F5AC268FF4DB003ED78C /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		630BDC11268EBF75007861C5 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		630BDC12268EBF75007861C5 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		630BDC15268EC570007861C5 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -51,6 +61,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C28F59C268FF332003ED78C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				630BDC1F268F05DE007861C5 /* StoryController.swift */,
+				630BDC21268F14C8007861C5 /* Comment.swift */,
+				632AC38E268D563B004848CB /* HomeController.swift */,
+				630BDC11268EBF75007861C5 /* CustomCell.swift */,
+				630BDC15268EC570007861C5 /* PostCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3C28F59E268FF34D003ED78C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				3C068D82268F762100124B77 /* ChatController.swift */,
+				3C28F5AB268FF4DB003ED78C /* ChatCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		3C28F59F268FF35F003ED78C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				630BDC12268EBF75007861C5 /* CustomCell.xib */,
+				630BDC22268F14C8007861C5 /* Comment.xib */,
+				630BDC16268EC570007861C5 /* PostCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3C28F5A0268FF36B003ED78C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				3C28F5AC268FF4DB003ED78C /* ChatCell.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		3C28F5A1268FF3DE003ED78C /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				3C28F5A7268FF40C003ED78C /* FriendController.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		3C28F5A2268FF3E5003ED78C /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				3C28F5A3268FF400003ED78C /* StoriesController.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		632AC37E268D563B004848CB = {
 			isa = PBXGroup;
 			children = (
@@ -84,11 +149,10 @@
 		63975EEF268EA58000F055F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				632AC38E268D563B004848CB /* HomeController.swift */,
-				630BDC11268EBF75007861C5 /* CustomCell.swift */,
-				630BDC15268EC570007861C5 /* PostCell.swift */,
-				630BDC1F268F05DE007861C5 /* StoryController.swift */,
-				630BDC21268F14C8007861C5 /* Comment.swift */,
+				3C28F5A2268FF3E5003ED78C /* Story */,
+				3C28F5A1268FF3DE003ED78C /* Friend */,
+				3C28F59C268FF332003ED78C /* Home */,
+				3C28F59E268FF34D003ED78C /* Chat */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,10 +160,9 @@
 		63975EF0268EA58B00F055F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C28F5A0268FF36B003ED78C /* Chat */,
+				3C28F59F268FF35F003ED78C /* Home */,
 				632AC390268D563B004848CB /* Main.storyboard */,
-				630BDC12268EBF75007861C5 /* CustomCell.xib */,
-				630BDC22268F14C8007861C5 /* Comment.xib */,
-				630BDC16268EC570007861C5 /* PostCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C28F5AE268FF4DB003ED78C /* ChatCell.xib in Resources */,
 				632AC397268D5640004848CB /* LaunchScreen.storyboard in Resources */,
 				632AC394268D5640004848CB /* Assets.xcassets in Resources */,
 				630BDC18268EC570007861C5 /* PostCell.xib in Resources */,
@@ -179,9 +243,13 @@
 			files = (
 				632AC38F268D563B004848CB /* HomeController.swift in Sources */,
 				630BDC20268F05DE007861C5 /* StoryController.swift in Sources */,
+				3C28F5AD268FF4DB003ED78C /* ChatCell.swift in Sources */,
 				632AC38B268D563B004848CB /* AppDelegate.swift in Sources */,
+				3C068D83268F762100124B77 /* ChatController.swift in Sources */,
+				3C28F5A4268FF400003ED78C /* StoriesController.swift in Sources */,
 				630BDC23268F14C8007861C5 /* Comment.swift in Sources */,
 				630BDC13268EBF75007861C5 /* CustomCell.swift in Sources */,
+				3C28F5A8268FF40C003ED78C /* FriendController.swift in Sources */,
 				632AC38D268D563B004848CB /* SceneDelegate.swift in Sources */,
 				630BDC17268EC570007861C5 /* PostCell.swift in Sources */,
 			);

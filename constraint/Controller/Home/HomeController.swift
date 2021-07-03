@@ -124,6 +124,7 @@ extension HomeController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewStory" {
             let _ = segue.destination as! StoryController
+            self.navigationItem.backButtonTitle = ""
         }
     }
 }

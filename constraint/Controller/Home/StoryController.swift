@@ -37,12 +37,16 @@ class StoryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
+        
+        
     }
 }
 // MARK: View setup
 extension StoryController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = false
+        self.title = "Nguyen Cao Thiem"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
