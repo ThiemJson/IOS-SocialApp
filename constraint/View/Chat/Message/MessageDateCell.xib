@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageDateCell" rowHeight="52" id="KGk-i7-Jjw" customClass="MessageDateCell" customModule="constraint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tc0-ag-QMB">
+                        <rect key="frame" x="5" y="5" width="310" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:59 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-yV-HxM">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="nhl-dC-JTX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UNI-yV-HxM" firstAttribute="top" secondItem="Tc0-ag-QMB" secondAttribute="top" id="X08-y7-qer"/>
+                            <constraint firstItem="UNI-yV-HxM" firstAttribute="leading" secondItem="Tc0-ag-QMB" secondAttribute="leading" id="jPY-rw-Hzj"/>
+                            <constraint firstAttribute="bottom" secondItem="UNI-yV-HxM" secondAttribute="bottom" id="kVW-2L-AwA"/>
+                            <constraint firstAttribute="trailing" secondItem="UNI-yV-HxM" secondAttribute="trailing" id="z9b-tz-G5v"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Tc0-ag-QMB" secondAttribute="bottom" constant="5" id="Loj-cl-O6M"/>
+                    <constraint firstItem="Tc0-ag-QMB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Mg7-a7-GkM"/>
+                    <constraint firstItem="Tc0-ag-QMB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="lz6-o2-WAE"/>
+                    <constraint firstAttribute="trailing" secondItem="Tc0-ag-QMB" secondAttribute="trailing" constant="5" id="p0p-MX-cO8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="85.507246376811594" y="65.625"/>
+        </tableViewCell>
+    </objects>
+</document>

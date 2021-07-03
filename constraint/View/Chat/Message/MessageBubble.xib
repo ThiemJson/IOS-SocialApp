@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageBubble" rowHeight="102" id="KGk-i7-Jjw" customClass="MessageBubble" customModule="constraint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-eY-cbr">
+                        <rect key="frame" x="10" y="8" width="373" height="86"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0Cu-T2-Vrx">
+                                <rect key="frame" x="5" y="5" width="363" height="76"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="iTb-99-OIk">
+                                        <rect key="frame" x="0.0" y="36" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="a8X-6R-uC4"/>
+                                            <constraint firstAttribute="width" constant="40" id="zaB-UT-ano"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-UE-G4U">
+                                        <rect key="frame" x="51" y="0.0" width="312" height="76"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào bạn," lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-gx-F8a">
+                                                <rect key="frame" x="10" y="10" width="292" height="56"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="RemoteBubble"/>
+                                        <constraints>
+                                            <constraint firstItem="qeQ-gx-F8a" firstAttribute="leading" secondItem="NaL-UE-G4U" secondAttribute="leading" constant="10" id="64D-Bl-SBa"/>
+                                            <constraint firstItem="qeQ-gx-F8a" firstAttribute="top" secondItem="NaL-UE-G4U" secondAttribute="top" constant="10" id="Bej-LR-ZkA"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="DWp-Kg-dvI"/>
+                                            <constraint firstAttribute="bottom" secondItem="qeQ-gx-F8a" secondAttribute="bottom" constant="10" id="JYo-kK-RuF"/>
+                                            <constraint firstAttribute="trailing" secondItem="qeQ-gx-F8a" secondAttribute="trailing" constant="10" id="Jxc-PW-QWR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0Cu-T2-Vrx" secondAttribute="bottom" constant="5" id="2eP-vG-8j9"/>
+                            <constraint firstItem="0Cu-T2-Vrx" firstAttribute="leading" secondItem="ImO-eY-cbr" secondAttribute="leading" constant="5" id="Vtz-vL-89y"/>
+                            <constraint firstAttribute="trailing" secondItem="0Cu-T2-Vrx" secondAttribute="trailing" constant="5" id="ocd-QP-KLZ"/>
+                            <constraint firstItem="0Cu-T2-Vrx" firstAttribute="top" secondItem="ImO-eY-cbr" secondAttribute="top" constant="5" id="poT-bv-SbE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ImO-eY-cbr" secondAttribute="bottom" constant="8" id="Bmu-Xw-UE9"/>
+                    <constraint firstItem="ImO-eY-cbr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Rj3-nl-04J"/>
+                    <constraint firstItem="ImO-eY-cbr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Tf7-dl-k38"/>
+                    <constraint firstAttribute="trailing" secondItem="ImO-eY-cbr" secondAttribute="trailing" constant="30" id="e4V-VT-kRz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="154.34782608695653" y="102.45535714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="user" width="600" height="600"/>
+        <namedColor name="RemoteBubble">
+            <color red="0.89411764705882346" green="0.89803921568627454" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
