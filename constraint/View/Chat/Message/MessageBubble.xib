@@ -33,9 +33,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-UE-G4U">
                                         <rect key="frame" x="51" y="0.0" width="312" height="76"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào bạn," lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-gx-F8a">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xin chào bạn, Xin chào bạn, Xin chào bạn, Xin chào bạn, Xin chào bạn, Xin chào bạn, Xin chào bạn, Xin chào bạn," lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-gx-F8a">
                                                 <rect key="frame" x="10" y="10" width="292" height="56"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -68,13 +68,18 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageBox" destination="NaL-UE-G4U" id="aAx-b0-puL"/>
+                <outlet property="messageText" destination="qeQ-gx-F8a" id="iTG-KC-JLS"/>
+                <outlet property="userImage" destination="iTb-99-OIk" id="XIu-s0-qr4"/>
+            </connections>
             <point key="canvasLocation" x="154.34782608695653" y="102.45535714285714"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="user" width="600" height="600"/>
         <namedColor name="RemoteBubble">
-            <color red="0.89411764705882346" green="0.89803921568627454" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89399999380111694" green="0.89800000190734863" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

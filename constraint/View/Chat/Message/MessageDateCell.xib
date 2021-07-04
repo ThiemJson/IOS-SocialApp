@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tc0-ag-QMB">
-                        <rect key="frame" x="5" y="5" width="310" height="42"/>
+                        <rect key="frame" x="5" y="5" width="310" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:59 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-yV-HxM">
-                                <rect key="frame" x="0.0" y="0.0" width="310" height="42"/>
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="nhl-dC-JTX"/>
+                                    <constraint firstAttribute="height" constant="30" id="CQY-CV-pES"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,14 +38,13 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Tc0-ag-QMB" secondAttribute="bottom" constant="5" id="Loj-cl-O6M"/>
                     <constraint firstItem="Tc0-ag-QMB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="Mg7-a7-GkM"/>
                     <constraint firstItem="Tc0-ag-QMB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="lz6-o2-WAE"/>
                     <constraint firstAttribute="trailing" secondItem="Tc0-ag-QMB" secondAttribute="trailing" constant="5" id="p0p-MX-cO8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="85.507246376811594" y="65.625"/>
+            <point key="canvasLocation" x="68" y="85"/>
         </tableViewCell>
     </objects>
 </document>

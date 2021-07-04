@@ -8,10 +8,26 @@
 import UIKit
 
 class MessageBubble: UITableViewCell {
-
+    public static let identifier = "MessageBubble"
+    @IBOutlet weak var userImage: UIImageView! {
+        didSet{
+            userImage.layer.cornerRadius = userImage.frame.size.height / 2
+            userImage.clipsToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var messageBox: UIView! {
+        didSet{
+            messageBox.layer.cornerRadius = messageBox.frame.size.height / 4
+            messageBox.clipsToBounds = true
+        }
+    }
+    @IBOutlet weak var messageText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -394,14 +394,79 @@
                     <view key="view" contentMode="scaleToFill" id="nyR-Bn-OrL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMa-EB-jNi" userLabel="BottomView">
+                                <rect key="frame" x="10" y="743" width="394" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="TBi-pF-LVj">
+                                        <rect key="frame" x="10" y="10" width="374" height="50"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="im3-Vo-DRX">
+                                                <rect key="frame" x="0.0" y="0.0" width="322" height="50"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uz8-4t-hv6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="322" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="XWl-Y9-iG4"/>
+                                                    <constraint firstItem="uz8-4t-hv6" firstAttribute="top" secondItem="im3-Vo-DRX" secondAttribute="top" id="sxe-Nl-jyX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uz8-4t-hv6" secondAttribute="trailing" id="sz0-uW-hXt"/>
+                                                    <constraint firstItem="uz8-4t-hv6" firstAttribute="leading" secondItem="im3-Vo-DRX" secondAttribute="leading" id="tXL-CJ-w0H"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uz8-4t-hv6" secondAttribute="bottom" id="xIB-4S-cQt"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW5-gj-paX">
+                                                <rect key="frame" x="334" y="10.5" width="40" height="39.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="9KU-Ld-Fd5"/>
+                                                    <constraint firstAttribute="height" constant="40" id="9XK-iP-zfY"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="paperplane.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="sendPressed:" destination="LVt-4P-no9" eventType="touchUpInside" id="Hk1-OX-rv3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="TBi-pF-LVj" firstAttribute="leading" secondItem="hMa-EB-jNi" secondAttribute="leading" constant="10" id="QrG-SA-mbZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="TBi-pF-LVj" secondAttribute="bottom" constant="10" id="pwZ-fv-4dX"/>
+                                    <constraint firstAttribute="trailing" secondItem="TBi-pF-LVj" secondAttribute="trailing" constant="10" id="rBA-z2-7Dw"/>
+                                    <constraint firstItem="TBi-pF-LVj" firstAttribute="top" secondItem="hMa-EB-jNi" secondAttribute="top" constant="10" id="yzl-o4-WuA"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qrg-Lr-kV6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="655"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1DB-YM-5hN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hMa-EB-jNi" firstAttribute="bottom" secondItem="1DB-YM-5hN" secondAttribute="bottom" id="0Nl-p5-8J4"/>
+                            <constraint firstItem="hMa-EB-jNi" firstAttribute="leading" secondItem="1DB-YM-5hN" secondAttribute="leading" constant="10" id="5vL-Vl-nHi"/>
+                            <constraint firstItem="1DB-YM-5hN" firstAttribute="trailing" secondItem="Qrg-Lr-kV6" secondAttribute="trailing" id="Dhz-fg-PNu"/>
+                            <constraint firstItem="Qrg-Lr-kV6" firstAttribute="top" secondItem="1DB-YM-5hN" secondAttribute="top" id="Zpm-6R-EJm"/>
+                            <constraint firstItem="Qrg-Lr-kV6" firstAttribute="leading" secondItem="1DB-YM-5hN" secondAttribute="leading" id="n0l-Tl-ynL"/>
+                            <constraint firstItem="1DB-YM-5hN" firstAttribute="trailing" secondItem="hMa-EB-jNi" secondAttribute="trailing" constant="10" id="yHf-6m-ar0"/>
+                            <constraint firstItem="hMa-EB-jNi" firstAttribute="top" secondItem="Qrg-Lr-kV6" secondAttribute="bottom" id="zMn-pB-Ier"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jgb-O1-YvQ"/>
+                    <connections>
+                        <outlet property="messageEdt" destination="uz8-4t-hv6" id="cq1-ik-syc"/>
+                        <outlet property="sendButton" destination="PW5-gj-paX" id="iRK-pW-nEs"/>
+                        <outlet property="tableView" destination="Qrg-Lr-kV6" id="7Yw-MI-vjd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDu-pX-FJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5697" y="457"/>
+            <point key="canvasLocation" x="5695.652173913044" y="456.69642857142856"/>
         </scene>
         <!--Friend-->
         <scene sceneID="5LH-GN-GdH">
