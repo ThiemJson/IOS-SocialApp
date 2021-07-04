@@ -16,12 +16,7 @@ class MessageBubble: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var messageBox: UIView! {
-        didSet{
-            messageBox.layer.cornerRadius = messageBox.frame.size.height / 4
-            messageBox.clipsToBounds = true
-        }
-    }
+    @IBOutlet weak var messageBox: UIView!
     @IBOutlet weak var messageText: UILabel!
     
     override func awakeFromNib() {
