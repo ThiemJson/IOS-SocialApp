@@ -26,6 +26,11 @@
 		630BDC20268F05DE007861C5 /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDC1F268F05DE007861C5 /* StoryController.swift */; };
 		630BDC23268F14C8007861C5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630BDC21268F14C8007861C5 /* Comment.swift */; };
 		630BDC24268F14C8007861C5 /* Comment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630BDC22268F14C8007861C5 /* Comment.xib */; };
+		6325C2562692A93900C0331D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2552692A93900C0331D /* ProfileController.swift */; };
+		6325C2592692AA6C00C0331D /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C2572692AA6C00C0331D /* ProfileHeaderCell.swift */; };
+		6325C25A2692AA6C00C0331D /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6325C2582692AA6C00C0331D /* ProfileHeaderCell.xib */; };
+		6325C25D2692BE7400C0331D /* ProfileDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325C25B2692BE7400C0331D /* ProfileDefaultCell.swift */; };
+		6325C25E2692BE7400C0331D /* ProfileDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6325C25C2692BE7400C0331D /* ProfileDefaultCell.xib */; };
 		632AC38B268D563B004848CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AC38A268D563B004848CB /* AppDelegate.swift */; };
 		632AC38D268D563B004848CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AC38C268D563B004848CB /* SceneDelegate.swift */; };
 		632AC38F268D563B004848CB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632AC38E268D563B004848CB /* HomeController.swift */; };
@@ -54,6 +59,11 @@
 		630BDC1F268F05DE007861C5 /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
 		630BDC21268F14C8007861C5 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		630BDC22268F14C8007861C5 /* Comment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Comment.xib; sourceTree = "<group>"; };
+		6325C2552692A93900C0331D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		6325C2572692AA6C00C0331D /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		6325C2582692AA6C00C0331D /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
+		6325C25B2692BE7400C0331D /* ProfileDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDefaultCell.swift; sourceTree = "<group>"; };
+		6325C25C2692BE7400C0331D /* ProfileDefaultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileDefaultCell.xib; sourceTree = "<group>"; };
 		632AC387268D563B004848CB /* constraint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = constraint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632AC38A268D563B004848CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		632AC38C268D563B004848CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +93,9 @@
 				632AC38E268D563B004848CB /* HomeController.swift */,
 				630BDC11268EBF75007861C5 /* CustomCell.swift */,
 				630BDC15268EC570007861C5 /* PostCell.swift */,
+				6325C2552692A93900C0331D /* ProfileController.swift */,
+				6325C2572692AA6C00C0331D /* ProfileHeaderCell.swift */,
+				6325C25B2692BE7400C0331D /* ProfileDefaultCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -100,6 +113,8 @@
 		3C28F59F268FF35F003ED78C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6325C25C2692BE7400C0331D /* ProfileDefaultCell.xib */,
+				6325C2582692AA6C00C0331D /* ProfileHeaderCell.xib */,
 				630BDC12268EBF75007861C5 /* CustomCell.xib */,
 				630BDC22268F14C8007861C5 /* Comment.xib */,
 				630BDC16268EC570007861C5 /* PostCell.xib */,
@@ -281,10 +296,12 @@
 				3C9628602690BAFD00B5B2D7 /* MessageDateCell.xib in Resources */,
 				632AC397268D5640004848CB /* LaunchScreen.storyboard in Resources */,
 				632AC394268D5640004848CB /* Assets.xcassets in Resources */,
+				6325C25E2692BE7400C0331D /* ProfileDefaultCell.xib in Resources */,
 				3C9628592690B04B00B5B2D7 /* MessageBubble.xib in Resources */,
 				630BDC18268EC570007861C5 /* PostCell.xib in Resources */,
 				630BDC24268F14C8007861C5 /* Comment.xib in Resources */,
 				630BDC14268EBF75007861C5 /* CustomCell.xib in Resources */,
+				6325C25A2692AA6C00C0331D /* ProfileHeaderCell.xib in Resources */,
 				632AC392268D563B004848CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				632AC38F268D563B004848CB /* HomeController.swift in Sources */,
+				6325C25D2692BE7400C0331D /* ProfileDefaultCell.swift in Sources */,
 				630BDC20268F05DE007861C5 /* StoryController.swift in Sources */,
 				3C28F5AD268FF4DB003ED78C /* ChatCell.swift in Sources */,
 				632AC38B268D563B004848CB /* AppDelegate.swift in Sources */,
@@ -308,10 +326,12 @@
 				630BDC13268EBF75007861C5 /* CustomCell.swift in Sources */,
 				3CA0E51E2691A51000F02128 /* AppConst.swift in Sources */,
 				3C9628682690C43800B5B2D7 /* MessageController.swift in Sources */,
+				6325C2592692AA6C00C0331D /* ProfileHeaderCell.swift in Sources */,
 				3C28F5A8268FF40C003ED78C /* FriendController.swift in Sources */,
 				632AC38D268D563B004848CB /* SceneDelegate.swift in Sources */,
 				630BDC17268EC570007861C5 /* PostCell.swift in Sources */,
 				3C96285F2690BAFD00B5B2D7 /* MessageDateCell.swift in Sources */,
+				6325C2562692A93900C0331D /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

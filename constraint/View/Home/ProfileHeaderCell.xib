@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="ProfileHeaderCell" customModule="constraint" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWl-1i-yIW">
+                        <rect key="frame" x="5" y="5" width="310" height="83"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oiE-qJ-Iv3">
+                                <rect key="frame" x="5" y="5" width="300" height="73"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ckb-GD-F33">
+                                        <rect key="frame" x="0.0" y="11.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7td-Ps-NyA"/>
+                                            <constraint firstAttribute="height" constant="50" id="Snf-5e-Zgj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-By-v4D">
+                                        <rect key="frame" x="66" y="22.5" width="100" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="a9q-Be-mN1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Change avatar">
+                                            <color key="titleColor" systemColor="systemGray3Color"/>
+                                            <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changAvatarPrressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kpZ-3Z-1lE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKF-sM-yp7">
+                                        <rect key="frame" x="182" y="22.5" width="118" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="MfH-hV-lcm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Delete Avatar"/>
+                                        <connections>
+                                            <action selector="deleteAvartiaPresed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JJi-S7-TD9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="oiE-qJ-Iv3" secondAttribute="bottom" constant="5" id="1oK-Yt-kxg"/>
+                            <constraint firstAttribute="trailing" secondItem="oiE-qJ-Iv3" secondAttribute="trailing" constant="5" id="Dzy-qY-gYB"/>
+                            <constraint firstItem="oiE-qJ-Iv3" firstAttribute="leading" secondItem="vWl-1i-yIW" secondAttribute="leading" constant="5" id="HGj-lf-xRf"/>
+                            <constraint firstItem="oiE-qJ-Iv3" firstAttribute="top" secondItem="vWl-1i-yIW" secondAttribute="top" constant="5" id="vQF-3a-b6E"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vWl-1i-yIW" secondAttribute="trailing" constant="5" id="2Ul-h2-b5Y"/>
+                    <constraint firstItem="vWl-1i-yIW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="7dn-Bh-3Gk"/>
+                    <constraint firstAttribute="bottom" secondItem="vWl-1i-yIW" secondAttribute="bottom" constant="5" id="ZuW-T8-tPd"/>
+                    <constraint firstItem="vWl-1i-yIW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="j0e-60-ccb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="changeAvatart" destination="IV0-By-v4D" id="NXO-KN-bEa"/>
+                <outlet property="deleteAvatar" destination="AKF-sM-yp7" id="25Z-yr-bPK"/>
+                <outlet property="userImage" destination="ckb-GD-F33" id="w0B-l1-XSA"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="120.87053571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="user" width="600" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

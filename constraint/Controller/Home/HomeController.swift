@@ -46,6 +46,14 @@ extension HomeController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = true
+        
+        
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(gotToProfile))
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    @objc private func gotToProfile(){
+        performSegue(withIdentifier: "showProfileSegue", sender: self)
     }
 }
 

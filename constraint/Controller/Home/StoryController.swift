@@ -37,8 +37,10 @@ class StoryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
-        
-        
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 // MARK: View setup
@@ -47,6 +49,7 @@ extension StoryController {
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "Nguyen Cao Thiem"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,

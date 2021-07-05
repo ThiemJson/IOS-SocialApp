@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZN-I1-2OS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZN-I1-2OS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -103,6 +103,7 @@
                         <outlet property="tableView" destination="FGB-EE-VrJ" id="hAC-4b-p3E"/>
                         <outlet property="tableViewHeight" destination="Don-Eu-5YM" id="6K7-0z-BgA"/>
                         <segue destination="ZgH-AX-nb5" kind="show" identifier="viewStory" id="VFL-pS-vf2"/>
+                        <segue destination="Gge-wL-BZL" kind="show" identifier="showProfileSegue" id="0Xd-46-anz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -307,19 +308,19 @@
                                         <rect key="frame" x="10" y="0.0" width="394" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEQ-7R-LQY">
-                                                <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="347" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3qv-VD-N4k"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uXd-iB-tBy"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="uXd-iB-tBy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-SX-lwq">
-                                                <rect key="frame" x="354" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="359" y="5" width="35" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="BTB-z9-dwb"/>
-                                                    <constraint firstAttribute="width" constant="40" id="hew-ES-Ec5"/>
+                                                    <constraint firstAttribute="height" constant="35" id="BTB-z9-dwb"/>
+                                                    <constraint firstAttribute="width" constant="35" id="hew-ES-Ec5"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="large"/>
@@ -368,6 +369,22 @@
             </objects>
             <point key="canvasLocation" x="5697.1014492753629" y="-308.03571428571428"/>
         </scene>
+        <!--Profile Controller-->
+        <scene sceneID="O1c-GC-sYq">
+            <objects>
+                <viewController id="Gge-wL-BZL" customClass="ProfileController" customModule="constraint" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qTR-hj-d1w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JD2-46-Ixi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bzj-ux-dwg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acl-ld-Qav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4780" y="-1137"/>
+        </scene>
         <!--Chat Controller-->
         <scene sceneID="CJh-lQ-IWZ">
             <objects>
@@ -402,16 +419,16 @@
                                         <rect key="frame" x="10" y="10" width="374" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="im3-Vo-DRX">
-                                                <rect key="frame" x="0.0" y="0.0" width="322" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uz8-4t-hv6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="322" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="XWl-Y9-iG4"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XWl-Y9-iG4"/>
                                                     <constraint firstItem="uz8-4t-hv6" firstAttribute="top" secondItem="im3-Vo-DRX" secondAttribute="top" id="sxe-Nl-jyX"/>
                                                     <constraint firstAttribute="trailing" secondItem="uz8-4t-hv6" secondAttribute="trailing" id="sz0-uW-hXt"/>
                                                     <constraint firstItem="uz8-4t-hv6" firstAttribute="leading" secondItem="im3-Vo-DRX" secondAttribute="leading" id="tXL-CJ-w0H"/>
@@ -419,10 +436,10 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW5-gj-paX">
-                                                <rect key="frame" x="334" y="10.5" width="40" height="39.5"/>
+                                                <rect key="frame" x="339" y="15.5" width="35" height="34.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="9KU-Ld-Fd5"/>
-                                                    <constraint firstAttribute="height" constant="40" id="9XK-iP-zfY"/>
+                                                    <constraint firstAttribute="width" constant="35" id="9KU-Ld-Fd5"/>
+                                                    <constraint firstAttribute="height" constant="35" id="9XK-iP-zfY"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="paperplane.fill" catalog="system"/>
                                                 <connections>
