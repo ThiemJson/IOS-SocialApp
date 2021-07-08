@@ -14,64 +14,18 @@ class ProfileController: UIViewController {
         return tableView
     }()
     
-    let topHeaderCell : ProfileHeaderCell = {
-        let cell = ProfileHeaderCell()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let firstNameCell  : UITableViewCell = {
-        let cell = UITableViewCell()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let firstNameEdt : UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    let secondNameCell  : UITableViewCell = {
-        let cell = UITableViewCell()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let secondNameEdt : UITextField = {
-        let cell = UITextField()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let addressCel : UITableViewCell = {
-        let cell = UITableViewCell()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let addressEdt : UITextField = {
-        let cell = UITextField()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let bioCell : UITableViewCell = {
-        let cell = UITableViewCell()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
-    let bioEdt : UITextField = {
-        let cell = UITextField()
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        return cell
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpView()
         self.setUpTableView()
+        self.setUpView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 }
 
@@ -79,41 +33,30 @@ class ProfileController: UIViewController {
 extension ProfileController {
     private func setUpView(){
         self.title = "My profile"
-        
-        view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        tableView.addSubview(topHeaderCell)
-        tableView.addSubview(firstNameCell)
-        tableView.addSubview(secondNameCell)
-        tableView.addSubview(addressCel)
-        tableView.addSubview(bioCell)
-        
-        firstNameCell.addSubview(firstNameEdt)
-        secondNameCell.addSubview(secondNameEdt)
-        addressCel.addSubview(addressEdt)
-        bioCell.addSubview(bioEdt)
-        
-        firstNameCell.centerYAnchor.constraint(equalTo: firstNameEdt.centerYAnchor).isActive = true
-        firstNameCell.leadingAnchor.constraint(equalTo: firstNameEdt.leadingAnchor).isActive = true
-        
-        secondNameCell.centerYAnchor.constraint(equalTo: secondNameEdt.centerYAnchor).isActive = true
-        secondNameCell.leadingAnchor.constraint(equalTo: secondNameEdt.leadingAnchor).isActive = true
-        
-        addressCel.centerYAnchor.constraint(equalTo: addressEdt.centerYAnchor).isActive = true
-        addressCel.leadingAnchor.constraint(equalTo: addressEdt.leadingAnchor).isActive = true
-        
-        bioCell.centerYAnchor.constraint(equalTo: bioEdt.centerYAnchor).isActive = true
-        bioCell.leadingAnchor.constraint(equalTo: bioEdt.leadingAnchor).isActive = true
     }
 }
 
 // MARK:  UITableView Delegate, Datasource
 extension ProfileController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.section {
+        case 0:
+            // todo
+            break
+        case 1:
+            switch indexPath.row {
+            case 1:
+                //todo
+                performSegue(withIdentifier: "goToFriend", sender: self)
+                break
+            default:
+                break
+            }
+        default:
+            fatalError()
+        }
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -137,7 +80,7 @@ extension ProfileController : UITableViewDelegate, UITableViewDataSource {
         case 0:
             return ""
         case 1:
-            return "ACTIONS"
+            return "Actions"
         default:
             fatalError()
         }
@@ -148,19 +91,28 @@ extension ProfileController : UITableViewDelegate, UITableViewDataSource {
         case 0:
             switch indexPath.row {
             case 0:
-                return topHeaderCell
+                let topCell = self.tableView.dequeueReusableCell(withIdentifier: ProfileHeaderCell.identifier, for: indexPath)
+                return topCell
             case 1:
+                let firstNameCell = self.tableView.dequeueReusableCell(withIdentifier: ProfileContentCell.identifier, for: indexPath) as! ProfileContentCell
+                firstNameCell.inputTextField.placeholder = "First name"
                 return firstNameCell
             case 2:
-                return secondNameCell
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: ProfileContentCell.identifier, for: indexPath) as! ProfileContentCell
+                cell.inputTextField.placeholder = "Second name"
+                return cell
             case 3:
-                return addressCel
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: ProfileContentCell.identifier, for: indexPath) as! ProfileContentCell
+                cell.inputTextField.placeholder = "Address"
+                return cell
             case 4:
-                return bioCell
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: ProfileContentCell.identifier, for: indexPath) as! ProfileContentCell
+                cell.inputTextField.placeholder = "Bio"
+                return cell
             default:
                 fatalError()
             }
-        // todo
+            break
         case 1:
             switch indexPath.row {
             case 0 :
@@ -198,12 +150,18 @@ extension ProfileController : UITableViewDelegate, UITableViewDataSource {
     }
     
     private func setUpTableView(){
+        view.addSubview(tableView)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.showsVerticalScrollIndicator = false
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.register(UINib(nibName: ProfileDefaultCell.identifier, bundle: nil), forCellReuseIdentifier: ProfileDefaultCell.identifier)
+        self.tableView.register(UINib(nibName: ProfileHeaderCell.identifier, bundle: nil), forCellReuseIdentifier: ProfileHeaderCell.identifier)
+        self.tableView.register(UINib(nibName: ProfileContentCell.identifier, bundle: nil), forCellReuseIdentifier: ProfileContentCell.identifier)
+        
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
-    
-    
 }

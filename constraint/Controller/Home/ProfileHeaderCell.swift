@@ -8,6 +8,7 @@
 import UIKit
 
 class ProfileHeaderCell: UITableViewCell {
+    public static let identifier = "ProfileHeaderCell"
     
     @IBOutlet weak var changeAvatart: UIButton!{
         didSet{
@@ -21,13 +22,14 @@ class ProfileHeaderCell: UITableViewCell {
         didSet{
             deleteAvatar.layer.cornerRadius = deleteAvatar.frame.size.height / 5
             deleteAvatar.layer.borderWidth = 1
+            deleteAvatar.tintColor = .red
             deleteAvatar.layer.borderColor = UIColor.systemRed.cgColor
             deleteAvatar.clipsToBounds = true
         }
     }
     @IBOutlet weak var userImage: UIImageView! {
         didSet{
-            userImage.layer.cornerRadius = layer.frame.size.height / 2
+            userImage.layer.cornerRadius = userImage.layer.frame.size.height / 2
             userImage.clipsToBounds = true
         }
     }
@@ -40,7 +42,7 @@ class ProfileHeaderCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
