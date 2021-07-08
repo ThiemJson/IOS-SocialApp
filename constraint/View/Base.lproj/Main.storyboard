@@ -380,6 +380,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="bzj-ux-dwg"/>
+                    <connections>
+                        <segue destination="r3R-gp-Dca" kind="show" identifier="goToFriend" id="DJx-24-sFD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acl-ld-Qav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,14 +495,79 @@
                     <view key="view" contentMode="scaleToFill" id="hC8-FC-jMJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-gP-H7k">
+                                <rect key="frame" x="0.0" y="88" width="414" height="96"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-MB-ENQ">
+                                        <rect key="frame" x="50" y="30.5" width="314" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="e1d-Kx-pHa"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Requests"/>
+                                            <segment title="Friends"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fpK-MB-ENQ" firstAttribute="centerY" secondItem="aRP-gP-H7k" secondAttribute="centerY" id="8T1-Jy-0No"/>
+                                    <constraint firstAttribute="trailing" secondItem="fpK-MB-ENQ" secondAttribute="trailing" constant="50" id="A2a-D9-UxK"/>
+                                    <constraint firstItem="fpK-MB-ENQ" firstAttribute="leading" secondItem="aRP-gP-H7k" secondAttribute="leading" constant="50" id="dma-jP-3M7"/>
+                                    <constraint firstAttribute="width" secondItem="aRP-gP-H7k" secondAttribute="height" multiplier="69:16" id="wWJ-8T-MWm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-PO-DMB">
+                                <rect key="frame" x="0.0" y="184" width="414" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 new requests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP5-g9-Tql">
+                                        <rect key="frame" x="20" y="0.0" width="394" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MP5-g9-Tql" secondAttribute="trailing" id="6CE-Xa-I5h"/>
+                                    <constraint firstItem="MP5-g9-Tql" firstAttribute="leading" secondItem="cCg-PO-DMB" secondAttribute="leading" constant="20" id="BTm-DE-RnH"/>
+                                    <constraint firstAttribute="height" constant="55" id="Bs0-dN-CR5"/>
+                                    <constraint firstAttribute="bottom" secondItem="MP5-g9-Tql" secondAttribute="bottom" constant="4" id="W0e-qx-oFT"/>
+                                    <constraint firstItem="MP5-g9-Tql" firstAttribute="top" secondItem="cCg-PO-DMB" secondAttribute="top" id="ekA-yF-6hW"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kSo-Aa-i3e">
+                                <rect key="frame" x="0.0" y="239" width="414" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XPG-NZ-Q7t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cCg-PO-DMB" firstAttribute="top" secondItem="aRP-gP-H7k" secondAttribute="bottom" id="7eh-yw-plI"/>
+                            <constraint firstItem="XPG-NZ-Q7t" firstAttribute="trailing" secondItem="aRP-gP-H7k" secondAttribute="trailing" id="WXb-2t-qUZ"/>
+                            <constraint firstItem="XPG-NZ-Q7t" firstAttribute="bottom" secondItem="kSo-Aa-i3e" secondAttribute="bottom" id="Zua-jq-58N"/>
+                            <constraint firstItem="XPG-NZ-Q7t" firstAttribute="trailing" secondItem="kSo-Aa-i3e" secondAttribute="trailing" id="cFK-4Q-B00"/>
+                            <constraint firstItem="kSo-Aa-i3e" firstAttribute="leading" secondItem="XPG-NZ-Q7t" secondAttribute="leading" id="cV9-3B-6Kc"/>
+                            <constraint firstItem="cCg-PO-DMB" firstAttribute="leading" secondItem="XPG-NZ-Q7t" secondAttribute="leading" id="eP6-9B-hBG"/>
+                            <constraint firstItem="XPG-NZ-Q7t" firstAttribute="trailing" secondItem="cCg-PO-DMB" secondAttribute="trailing" id="gp2-uP-nLs"/>
+                            <constraint firstItem="aRP-gP-H7k" firstAttribute="top" secondItem="XPG-NZ-Q7t" secondAttribute="top" id="pGC-SI-z5D"/>
+                            <constraint firstItem="aRP-gP-H7k" firstAttribute="leading" secondItem="XPG-NZ-Q7t" secondAttribute="leading" id="qTh-xJ-5ge"/>
+                            <constraint firstItem="kSo-Aa-i3e" firstAttribute="top" secondItem="cCg-PO-DMB" secondAttribute="bottom" id="qfQ-cP-fMh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Friend" image="person.2.fill" catalog="system" id="Q8W-ht-AgZ"/>
+                    <navigationItem key="navigationItem" id="jAe-rO-Uv7"/>
+                    <connections>
+                        <outlet property="sectionName" destination="MP5-g9-Tql" id="lA6-nB-l21"/>
+                        <outlet property="segmentControl" destination="fpK-MB-ENQ" id="ErH-nt-3VF"/>
+                        <outlet property="tableView" destination="kSo-Aa-i3e" id="zEp-SD-RtB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2A-Po-4B9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3847" y="1309"/>
+            <point key="canvasLocation" x="3846.376811594203" y="1308.4821428571429"/>
         </scene>
         <!--Stories-->
         <scene sceneID="rIo-QZ-YC3">
@@ -578,6 +646,9 @@
             <point key="canvasLocation" x="3869.5652173913045" y="456.69642857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DJx-24-sFD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
@@ -590,8 +661,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

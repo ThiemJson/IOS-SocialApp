@@ -37,6 +37,12 @@
 		632AC392268D563B004848CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632AC390268D563B004848CB /* Main.storyboard */; };
 		632AC394268D5640004848CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632AC393268D5640004848CB /* Assets.xcassets */; };
 		632AC397268D5640004848CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632AC395268D5640004848CB /* LaunchScreen.storyboard */; };
+		636823A426959D690066ED8B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636823A226959D690066ED8B /* Login.swift */; };
+		636823A526959D690066ED8B /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636823A326959D690066ED8B /* Login.xib */; };
+		63B81BF0269555B1007785B7 /* ProfileContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B81BEE269555B1007785B7 /* ProfileContentCell.swift */; };
+		63B81BF1269555B1007785B7 /* ProfileContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B81BEF269555B1007785B7 /* ProfileContentCell.xib */; };
+		63B81BF426956BD6007785B7 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B81BF226956BD6007785B7 /* FriendCell.swift */; };
+		63B81BF526956BD6007785B7 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B81BF326956BD6007785B7 /* FriendCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +78,12 @@
 		632AC393268D5640004848CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632AC396268D5640004848CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632AC398268D5640004848CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		636823A226959D690066ED8B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		636823A326959D690066ED8B /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		63B81BEE269555B1007785B7 /* ProfileContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentCell.swift; sourceTree = "<group>"; };
+		63B81BEF269555B1007785B7 /* ProfileContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileContentCell.xib; sourceTree = "<group>"; };
+		63B81BF226956BD6007785B7 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		63B81BF326956BD6007785B7 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 				6325C2552692A93900C0331D /* ProfileController.swift */,
 				6325C2572692AA6C00C0331D /* ProfileHeaderCell.swift */,
 				6325C25B2692BE7400C0331D /* ProfileDefaultCell.swift */,
+				63B81BEE269555B1007785B7 /* ProfileContentCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -118,6 +131,7 @@
 				630BDC12268EBF75007861C5 /* CustomCell.xib */,
 				630BDC22268F14C8007861C5 /* Comment.xib */,
 				630BDC16268EC570007861C5 /* PostCell.xib */,
+				63B81BEF269555B1007785B7 /* ProfileContentCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -135,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3C28F5A7268FF40C003ED78C /* FriendController.swift */,
+				63B81BF226956BD6007785B7 /* FriendCell.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -214,9 +229,19 @@
 			path = constraint;
 			sourceTree = "<group>";
 		};
+		636823A126959CE00066ED8B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				636823A226959D690066ED8B /* Login.swift */,
+				636823A326959D690066ED8B /* Login.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		63975EEF268EA58000F055F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				636823A126959CE00066ED8B /* Login */,
 				3C28F5A2268FF3E5003ED78C /* Story */,
 				3C28F5A1268FF3DE003ED78C /* Friend */,
 				3C28F59C268FF332003ED78C /* Home */,
@@ -228,11 +253,20 @@
 		63975EF0268EA58B00F055F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63B81BF626956BE5007785B7 /* Friend */,
 				3C28F5A0268FF36B003ED78C /* Chat */,
 				3C28F59F268FF35F003ED78C /* Home */,
 				632AC390268D563B004848CB /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		63B81BF626956BE5007785B7 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				63B81BF326956BD6007785B7 /* FriendCell.xib */,
+			);
+			path = Friend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,10 +333,13 @@
 				6325C25E2692BE7400C0331D /* ProfileDefaultCell.xib in Resources */,
 				3C9628592690B04B00B5B2D7 /* MessageBubble.xib in Resources */,
 				630BDC18268EC570007861C5 /* PostCell.xib in Resources */,
+				63B81BF1269555B1007785B7 /* ProfileContentCell.xib in Resources */,
 				630BDC24268F14C8007861C5 /* Comment.xib in Resources */,
 				630BDC14268EBF75007861C5 /* CustomCell.xib in Resources */,
 				6325C25A2692AA6C00C0331D /* ProfileHeaderCell.xib in Resources */,
 				632AC392268D563B004848CB /* Main.storyboard in Resources */,
+				63B81BF526956BD6007785B7 /* FriendCell.xib in Resources */,
+				636823A526959D690066ED8B /* Login.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +353,13 @@
 				632AC38F268D563B004848CB /* HomeController.swift in Sources */,
 				6325C25D2692BE7400C0331D /* ProfileDefaultCell.swift in Sources */,
 				630BDC20268F05DE007861C5 /* StoryController.swift in Sources */,
+				63B81BF0269555B1007785B7 /* ProfileContentCell.swift in Sources */,
 				3C28F5AD268FF4DB003ED78C /* ChatCell.swift in Sources */,
 				632AC38B268D563B004848CB /* AppDelegate.swift in Sources */,
 				3C068D83268F762100124B77 /* ChatController.swift in Sources */,
+				63B81BF426956BD6007785B7 /* FriendCell.swift in Sources */,
 				3C28F5A4268FF400003ED78C /* StoriesController.swift in Sources */,
+				636823A426959D690066ED8B /* Login.swift in Sources */,
 				3CA0E5212691A52800F02128 /* UIViewExtension.swift in Sources */,
 				630BDC23268F14C8007861C5 /* Comment.swift in Sources */,
 				3C9628582690B04B00B5B2D7 /* MessageBubble.swift in Sources */,
